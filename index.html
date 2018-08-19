@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Style guide</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;java&quot;,&quot;xml&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,10 +211,8 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="java">java</a>
+              <a href="#" data-language-name="xml">xml</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -222,282 +220,402 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#table-of-contents" class="toc-h1 toc-link" data-title="Table of contents">Table of contents</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#1-introduction" class="toc-h1 toc-link" data-title="1. Introduction">1. Introduction</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#2-file-organisation" class="toc-h1 toc-link" data-title="2. File organisation">2. File organisation</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#2-1-import-statements" class="toc-h2 toc-link" data-title="2.1 Import statements">2.1 Import statements</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#3-formatting" class="toc-h1 toc-link" data-title="3. Formatting">3. Formatting</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#3-1-braces" class="toc-h2 toc-link" data-title="3.1 Braces">3.1 Braces</a>
+                  </li>
+                  <li>
+                    <a href="#3-2-spaces-around-operators" class="toc-h2 toc-link" data-title="3.2 Spaces around operators">3.2 Spaces around operators</a>
+                  </li>
+                  <li>
+                    <a href="#3-3-explicit-operator-precedence" class="toc-h2 toc-link" data-title="3.3 Explicit operator precedence">3.3 Explicit operator precedence</a>
+                  </li>
+                  <li>
+                    <a href="#3-4-one-statement-per-line" class="toc-h2 toc-link" data-title="3.4 One statement per line">3.4 One statement per line</a>
+                  </li>
+                  <li>
+                    <a href="#3-5-column-limit-100" class="toc-h2 toc-link" data-title="3.5 Column limit: 100">3.5 Column limit: 100</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#4-naming-conventions" class="toc-h1 toc-link" data-title="4. Naming conventions">4. Naming conventions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#4-1-non-constant-field-names" class="toc-h2 toc-link" data-title="4.1 Non-constant field names">4.1 Non-constant field names</a>
+                  </li>
+                  <li>
+                    <a href="#4-2-prefixes" class="toc-h2 toc-link" data-title="4.2 Prefixes">4.2 Prefixes</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#good-practices" class="toc-h1 toc-link" data-title="Good practices">Good practices</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#5-1-final-where-possible" class="toc-h2 toc-link" data-title="5.1 final where possible">5.1 final where possible</a>
+                  </li>
+                  <li>
+                    <a href="#5-2-use-maintained-better-libraries" class="toc-h2 toc-link" data-title="5.2 Use maintained/better libraries">5.2 Use maintained/better libraries</a>
+                  </li>
+                  <li>
+                    <a href="#5-3-minimise-variable-scope" class="toc-h2 toc-link" data-title="5.3 Minimise variable scope">5.3 Minimise variable scope</a>
+                  </li>
+                  <li>
+                    <a href="#5-4-exceptions" class="toc-h2 toc-link" data-title="5.4 Exceptions">5.4 Exceptions</a>
+                  </li>
+                  <li>
+                    <a href="#5-5-string-arrays-use-string-resources" class="toc-h2 toc-link" data-title="5.5 String arrays use string resources">5.5 String arrays use string resources</a>
+                  </li>
+                  <li>
+                    <a href="#5-6-use-single-positive-conditionals" class="toc-h2 toc-link" data-title="5.6 Use single positive conditionals">5.6 Use single positive conditionals</a>
+                  </li>
+                  <li>
+                    <a href="#5-7-class-member-ordering" class="toc-h2 toc-link" data-title="5.7 Class member ordering">5.7 Class member ordering</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#6-xml-style" class="toc-h1 toc-link" data-title="6 XML Style">6 XML Style</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#6-1-self-closing" class="toc-h2 toc-link" data-title="6.1 Self-closing">6.1 Self-closing</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#7-annotations" class="toc-h1 toc-link" data-title="7 Annotations">7 Annotations</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#7-1-annotations-on-separate-lines" class="toc-h2 toc-link" data-title="7.1 Annotations on separate lines">7.1 Annotations on separate lines</a>
+                  </li>
+                  <li>
+                    <a href="#7-2-overriding-methods" class="toc-h2 toc-link" data-title="7.2 Overriding methods">7.2 Overriding methods</a>
+                  </li>
+              </ul>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://github.com/knjk04/Bookshelf'>Bookshelf on GitHub</a></li>
             <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id='table-of-contents'>Table of contents</h1>
+<ol>
+<li><p>Introduction</p></li>
+<li><p>File organisation</p></li>
+<li><p>Formatting</p></li>
+<li><p>Naming conventions</p></li>
+<li><p>Good practices</p></li>
+<li><p>XML style</p></li>
+<li><p>Annotations</p></li>
+</ol>
+<h1 id='1-introduction'>1. Introduction</h1>
+<p>The style guide we follow is modelled around <a href="https://google.github.io/styleguide/javaguide.html">Google&#39;s Java Style Guide</a>. 
+Please refer to our style guide instead of Google&#39;s if you want to contribute to this repository.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
+<p>If you see a place where the styleguide is violated, please do submit a pull request.</p>
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+If in doubt, get in contact with us by raising an issue.
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='2-file-organisation'>2. File organisation</h1><h2 id='2-1-import-statements'>2.1 Import statements</h2><h3 id='2-1-1-no-wildcard-imports'>2.1.1 No wildcard imports</h3>
+<p>Please do not use wildcard imports on this repository, even if you need to import several times from a particular package.</p>
+<h3 id='2-1-2-remove-unused-imports'>2.1.2 Remove unused imports</h3>
+<p>Help keep our files tidy by removing unused imports.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
+<p>If an import is <strong>commented</strong> out, please do not remove it. Instead, we request that you raise an issue to ask if it is needed. Raising an issue could be really helpul. We might just have forgotten about it.</p>
+<h1 id='3-formatting'>3. Formatting</h1><h2 id='3-1-braces'>3.1 Braces</h2><h3 id='3-1-1-optional-braces'>3.1.1 Optional braces</h3>
+<p>Braces are always used with <code>if/else</code>, <code>for</code>, <code>while</code> and <code>do</code> statements, even when the body consists of no statements or one statement.</p>
+<h3 id='3-1-2-k-amp-r-style-nonempty-blocks'>3.1.2 K &amp; R style nonempty blocks</h3>
+<p>Braces use the Kernighan and Ritchie style for nonempty blocks or block-like constructs.</p>
+<h3 id='3-1-3-empty-blocks'>3.1.3 Empty blocks</h3>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>(Empty blocks) Acceptable:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
+<pre class="highlight java tab-java"><code><span class="c1">// Acceptable</span>
+<span class="kd">public</span> <span class="nf">defaultConstructor</span><span class="o">()</span> <span class="o">{}</span>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<span class="c1">// Also acceptable</span>
+<span class="kt">void</span> <span class="nf">foo</span><span class="o">()</span> <span class="o">{</span> 
+<span class="o">}</span>
+
+<span class="c1">// Not acceptable</span>
+<span class="k">try</span> <span class="o">{</span>
+  <span class="n">parseBookListData</span><span class="o">();</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{}</span>
+
+</code></pre>
+<p>An empty block or block-like construct can be in K &amp; R style (see section 3.1.2).</p>
+
+<p>Another option is for the brace to be closed after it has been opened with no characters or line breaks in between (<code>{}</code>), except when it is part of a multi-block statement -- 
+a block that consists of multiple blocks (e.g. if/else or <code>try/catch/finally</code>).</p>
+
+<p>Note that the unacceptable example above is for illustrative purposes only. It also violates the &#39;Catch Specific Exception&#39; guideline (see section 6.3)</p>
+<h2 id='3-2-spaces-around-operators'>3.2 Spaces around operators</h2>
+<blockquote>
+<p>(Spaces around operators) Acceptable:</p>
+</blockquote>
+<pre class="highlight java tab-java"><code><span class="c1">// Acceptable</span>
+<span class="k">this</span><span class="o">.</span><span class="na">pageCount</span> <span class="o">+=</span> <span class="n">pageCount</span><span class="o">;</span>
+
+<span class="c1">// Not acceptable</span>
+<span class="k">this</span><span class="o">.</span><span class="na">pageCount</span><span class="o">+=</span><span class="n">pageCount</span><span class="o">;</span>
+</code></pre>
+<p>It&#39;s just a lot clearer and nicer to read.</p>
+<h2 id='3-3-explicit-operator-precedence'>3.3 Explicit operator precedence</h2>
+<p>Even where obvious. use parenthesis to make the ordering explicit. It could save someone else who does not know the precedence rules from having to look it up.</p>
+
+<blockquote>
+<p>SECTION X, Explicit operator precedence</p>
+</blockquote>
+<pre class="highlight java tab-java"><code><span class="c1">// Good</span>
+<span class="n">meaningfulVariableName</span> <span class="o">=</span> <span class="o">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">SECONDS_IN_MILLIS</span><span class="o">)</span> <span class="o">+</span> <span class="n">OFFSET</span><span class="o">;</span> 
+</code></pre><h2 id='3-4-one-statement-per-line'>3.4 One statement per line</h2>
+<p>Where every statement is separated by a line break.</p>
+<h2 id='3-5-column-limit-100'>3.5 Column limit: 100</h2>
+<p>For readability purposes. Some exceptions include:</p>
+
+<ul>
+<li>a long URL</li>
+<li>a TODO statement</li>
+<li>package statements</li>
+<li>import statements and anywhere breaking a statement at the 100 character limit is invalid.</li>
+</ul>
+<h1 id='4-naming-conventions'>4. Naming conventions</h1><h2 id='4-1-non-constant-field-names'>4.1 Non-constant field names</h2>
+<blockquote>
+<p>Section 4.1, Non-constant field names:</p>
+</blockquote>
+<pre class="highlight java tab-java"><code><span class="c1">// Good</span>
+<span class="kt">boolean</span> <span class="n">haveClicked</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+
+<span class="c1">// Bad</span>
+<span class="kt">boolean</span> <span class="n">mHaveClicked</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</code></pre>
+<p>No &quot;Hungarian Notation&quot; (System or Apps Notation).</p>
+<h2 id='4-2-prefixes'>4.2 Prefixes</h2><h3 id='4-2-1-files'>4.2.1 Files</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>Type of file</th>
+<th>Prefix</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>Activity</td>
+<td><code>activity_</code></td>
+</tr>
+<tr>
+<td>Fragment</td>
+<td><code>fragment_</code></td>
+</tr>
+<tr>
+<td>Menu</td>
+<td><code>menu_</code></td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h3 id='4-2-2-suffixes'>4.2.2 Suffixes</h3>
+<p>(Switch to the XML tab to see examples) </p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>View</th>
+<th>Suffix</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>TextView</td>
+<td><code>Txt</code></td>
+</tr>
+<tr>
+<td>SimpleDraweeView</td>
+<td><code>Drawee</code></td>
+</tr>
+<tr>
+<td>Button</td>
+<td><code>Btn</code></td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+
+<ul>
+<li>Adapters to be suffixed with <code>Adapter</code></li>
+</ul>
+<pre class="highlight java tab-java"><code>  <span class="kd">private</span> <span class="n">BookListAdapter</span> <span class="n">bookListAdapter</span><span class="o">;</span>
+</code></pre>
+<ul>
+<li><code>Layout</code>s to be suffixed with <code>Layout</code></li>
+</ul>
+<pre class="highlight xml tab-xml"><code>android:id="@+id/constraintLayout
+</code></pre><h1 id='good-practices'>Good practices</h1><h2 id='5-1-final-where-possible'>5.1 final where possible</h2>
+<p>If something can be made final (e.g. constants), it should be made final.</p>
+<h2 id='5-2-use-maintained-better-libraries'>5.2 Use maintained/better libraries</h2>
+<p>If a third-party library is not maintained, please avoid using it.</p>
+
+<p>If something is deprecated (third-party or not), please also avoid using it.</p>
+
+<p>If there is a better library out there, you should use it (e.g. RecyclerView over ListView).</p>
+<h2 id='5-3-minimise-variable-scope'>5.3 Minimise variable scope</h2>
+<p>If something can be local, it should be made local. A variable should be declared as close to where it is used as possible. </p>
+
+<aside class="success">
+This can help reduce the likelihood of a bug occuring, as well as improve readability.
 </aside>
+<h2 id='5-4-exceptions'>5.4 Exceptions</h2><h3 id='5-4-1-catch-specific-exceptions'>5.4.1 Catch specific exceptions</h3>
+<p>Instead of just catching <code>Exception</code>, if it is possible to catch (a) particular exception(s), do so.</p>
+<pre class="highlight java tab-java"><code><span class="c1">// Bad</span>
+<span class="k">try</span> <span class="o">{</span>
+  <span class="c1">// do something fishy</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// lazy</span>
+  <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+<span class="o">}</span>
 
-<p>The Kittn API uses the following error codes:</p>
+<span class="c1">// Good</span>
+<span class="k">try</span> <span class="o">{</span>
+  <span class="c1">// do something fishy</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NullPointerException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre><h3 id='5-4-2-don-39-t-drop-the-catch'>5.4.2 Don&#39;t drop the catch</h3>
+<p>In a catch block, don&#39;t do nothing by leaving the block empty. You should ideally log the exception or print the stack trace.</p>
+<pre class="highlight java tab-java"><code><span class="c1">// Good</span>
+<span class="k">try</span> <span class="o">{</span>
+  <span class="n">execFishyCode</span><span class="o">();</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+<span class="o">}</span>
 
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
-</tr>
-</tbody></table>
+<span class="c1">// Bad</span>
+<span class="k">try</span> <span class="o">{</span>
+  <span class="n">execFishyCode</span><span class="o">();</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+<span class="o">}</span>
+</code></pre><h2 id='5-5-string-arrays-use-string-resources'>5.5 String arrays use string resources</h2>
+<p>(Switch to XML tab to see example)</p>
+
+<p>Instead of using string literals, string arrays should always use String resources. Array string literals are not translated, whereas String resources are.</p>
+<pre class="highlight xml tab-xml"><code><span class="c">&lt;!-- Good --&gt;</span>
+<span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"bookInfoShortened"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;item&gt;</span> @string/title <span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;item&gt;</span> @string/publishedDate <span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;item&gt;</span> @string/publisher <span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/string-array&gt;</span>
+
+<span class="c">&lt;!-- Bad --&gt;</span>
+<span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"bookInfoShortened"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;item&gt;</span>title<span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;item&gt;</span>publishedDate<span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;item&gt;</span>publisher<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/string-array&gt;</span>
+</code></pre><h2 id='5-6-use-single-positive-conditionals'>5.6 Use single positive conditionals</h2>
+<p>It can be a lot confusing for other programmers (see <a href="https://www.refactoring.com/catalog/removeDoubleNegative.html">Fowler&#39;s article</a>).</p>
+<pre class="highlight java tab-java"><code><span class="c1">// Good</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">isAvailable</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// do something</span>
+<span class="o">}</span>
+
+<span class="c1">// Bad</span>
+<span class="k">if</span> <span class="o">(!</span><span class="n">isNotAvailable</span><span class="o">())</span> <span class="o">{</span>
+  <span class="c1">// do something</span>
+<span class="o">}</span>
+</code></pre><h2 id='5-7-class-member-ordering'>5.7 Class member ordering</h2>
+<p>This section has been modified from the <a href="https://github.com/ribot/android-guidelines/blob/master/project_and_code_guidelines.md">Ribot Android style guide</a>. 
+It is licensed under the Apache license.</p>
+
+<p>As the Ribot style guide points out, there is no one correct way of ordering members. However, following this format can help find, for example, private methods easier.</p>
+
+<p>The following order should be used:</p>
+
+<ol>
+<li>Constants</li>
+<li>Fields</li>
+<li>Constructors</li>
+<li>Overidden methods and callbacks (public or private)</li>
+<li>Public methods</li>
+<li>Private methods</li>
+<li>Inner classes or interfaces</li>
+</ol>
+
+<blockquote>
+<p>Class member ordering</p>
+</blockquote>
+<pre class="highlight java tab-java"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">TAG</span> <span class="o">=</span> <span class="n">MainActivity</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getSimpleName</span><span class="o">();</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">title</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">textViewTitle</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setTitle</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">setUpView</span><span class="o">()</span> <span class="o">{</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">InnerClass</span> <span class="o">{</span>
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+<p>Activity or Fragment classes should follow the ordering or the activity/fragment lifecycle: <code>onCreate()</code>, <code>onDestroy</code>, <code>onPause()</code> and <code>onResume()</code>.</p>
+
+<blockquote>
+<p>Activity lifecycle</p>
+</blockquote>
+<pre class="highlight java tab-java"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
+
+    <span class="c1">// Order of methods corresponds to the order of the activity lifecycle</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPause</span><span class="o">()</span> <span class="o">{}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span> <span class="o">{}</span>
+
+<span class="o">}</span>
+</code></pre><h1 id='6-xml-style'>6 XML Style</h1><h2 id='6-1-self-closing'>6.1 Self-closing</h2>
+<p>Use self-closing tags where possible.</p>
+<h1 id='7-annotations'>7 Annotations</h1><h2 id='7-1-annotations-on-separate-lines'>7.1 Annotations on separate lines</h2>
+<p>Every annotation should be on its own separate line</p>
+<pre class="highlight java tab-java"><code><span class="nd">@NonNull</span>
+<span class="nd">@Override</span>
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">foo</span><span class="o">()</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+</code></pre><h2 id='7-2-overriding-methods'>7.2 Overriding methods</h2>
+<p>Where a method is overriden from a superclass, the <code>@Override</code> annotation should be used.</p>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="java">java</a>
+                <a href="#" data-language-name="xml">xml</a>
           </div>
       </div>
     </div>
