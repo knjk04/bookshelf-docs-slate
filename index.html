@@ -262,7 +262,7 @@
               </ul>
           </li>
           <li>
-            <a href="#good-practices" class="toc-h1 toc-link" data-title="Good practices">Good practices</a>
+            <a href="#5-good-practices" class="toc-h1 toc-link" data-title="5. Good practices">5. Good practices</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#5-1-final-where-possible" class="toc-h2 toc-link" data-title="5.1 final where possible">5.1 final where possible</a>
@@ -285,6 +285,9 @@
                   <li>
                     <a href="#5-7-class-member-ordering" class="toc-h2 toc-link" data-title="5.7 Class member ordering">5.7 Class member ordering</a>
                   </li>
+                  <li>
+                    <a href="#5-8-use-butter-knife-where-possible" class="toc-h2 toc-link" data-title="5.8 Use Butter Knife where possible">5.8 Use Butter Knife where possible</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -305,6 +308,12 @@
                     <a href="#7-2-overriding-methods" class="toc-h2 toc-link" data-title="7.2 Overriding methods">7.2 Overriding methods</a>
                   </li>
               </ul>
+          </li>
+          <li>
+            <a href="#attributions" class="toc-h1 toc-link" data-title="Attributions">Attributions</a>
+          </li>
+          <li>
+            <a href="#licenses" class="toc-h1 toc-link" data-title="Licenses">Licenses</a>
           </li>
       </ul>
         <ul class="toc-footer">
@@ -389,7 +398,7 @@ a block that consists of multiple blocks (e.g. if/else or <code>try/catch/finall
 </ul>
 <h1 id='4-naming-conventions'>4. Naming conventions</h1><h2 id='4-1-non-constant-field-names'>4.1 Non-constant field names</h2>
 <blockquote>
-<p>Section 4.1, Non-constant field names:</p>
+<p>Section 4.1: Non-constant field names:</p>
 </blockquote>
 <pre class="highlight java tab-java"><code><span class="c1">// Good</span>
 <span class="kt">boolean</span> <span class="n">haveClicked</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
@@ -454,7 +463,7 @@ a block that consists of multiple blocks (e.g. if/else or <code>try/catch/finall
 <li><code>Layout</code>s to be suffixed with <code>Layout</code> (see XML tab for example)</li>
 </ul>
 <pre class="highlight xml tab-xml"><code>android:id="@+id/constraintLayout
-</code></pre><h1 id='good-practices'>Good practices</h1><h2 id='5-1-final-where-possible'>5.1 final where possible</h2>
+</code></pre><h1 id='5-good-practices'>5. Good practices</h1><h2 id='5-1-final-where-possible'>5.1 final where possible</h2>
 <p>If something can be made <code>final</code> (e.g. constants), it should be made final.</p>
 <h2 id='5-2-use-maintained-better-libraries'>5.2 Use maintained/better libraries</h2>
 <p>If a third-party library is not maintained, please avoid using it.</p>
@@ -604,7 +613,14 @@ It is licensed under the Apache license.</p>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span> <span class="o">{}</span>
 
 <span class="o">}</span>
-</code></pre><h1 id='6-xml-style'>6 XML Style</h1><h2 id='6-1-self-closing'>6.1 Self-closing</h2>
+</code></pre><h2 id='5-8-use-butter-knife-where-possible'>5.8 Use Butter Knife where possible</h2>
+<p>Instead of doing:</p>
+
+<ul>
+<li><p><code>findViewById(...)</code>, use <code>@BindView</code> where possible</p></li>
+<li><p><code>android:onClick</code> or <code>setOnClickListener</code> for views like Buttons, use the Butter Knife <code>@OnClick</code> annotation</p></li>
+</ul>
+<h1 id='6-xml-style'>6 XML Style</h1><h2 id='6-1-self-closing'>6.1 Self-closing</h2>
 <p>Use self-closing tags where possible.</p>
 <h1 id='7-annotations'>7 Annotations</h1><h2 id='7-1-annotations-on-separate-lines'>7.1 Annotations on separate lines</h2>
 <p>Every annotation should be on its own separate line</p>
@@ -617,7 +633,24 @@ It is licensed under the Apache license.</p>
 <span class="kd">private</span> <span class="kt">void</span> <span class="nf">foo</span><span class="o">()</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
 </code></pre><h2 id='7-2-overriding-methods'>7.2 Overriding methods</h2>
 <p>Where a method is overriden from a superclass, the <code>@Override</code> annotation should be used.</p>
+<h1 id='attributions'>Attributions</h1>
+<p>Icon made by <a href="https://www.flaticon.com/authors/freepik">Freepik</a> from www.flaticon.com </p>
+<h1 id='licenses'>Licenses</h1>
+<p>For use of a part of <a href="https://github.com/ribot/android-guidelines/blob/master/project_and_code_guidelines.md">Ribot&#39;s style guide</a>.</p>
+<pre class="highlight plaintext"><code>Copyright [2018] [Karan Kumar]
 
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
