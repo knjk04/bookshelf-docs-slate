@@ -9,7 +9,7 @@
 
 <p align="center"><em>The example above was created with Slate. Check it out at <a href="https://lord.github.io/slate">lord.github.io/slate</a>.</em></p>
 
-# Bookshelf Docs
+# Bookshelf Style guide
 
 This repository is for the web page made with [Slate](https://github.com/lord/slate) for the Bookshelf style guide.
 
