@@ -11,7 +11,7 @@
 
 # Bookshelf Style guide
 
-This repository is for the web page made with [Slate](https://github.com/lord/slate) for the Bookshelf style guide.
+This repository is for the web page made with [Slate](https://github.com/lord/slate) for the [Bookshelf style guide](https://presentedbykaran.com/bookshelf-styleguide).
 
 Getting Started with Slate
 ------------------------------
