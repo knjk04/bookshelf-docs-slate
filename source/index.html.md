@@ -355,9 +355,6 @@ Instead of doing:
 
 - ```android:onClick``` or ```setOnClickListener``` for views like Buttons, use the Butter Knife ```@OnClick``` annotation
 
-
-
-
 # 6 XML Style
 
 ## 6.1 Self-closing
@@ -381,3 +378,27 @@ private void foo() { ... }
 ## 7.2 Overriding methods
 
 Where a method is overriden from a superclass, the ```@Override``` annotation should be used.
+
+# Attributions
+
+Icon made by [Freepik](https://www.flaticon.com/authors/freepik) from www.flaticon.com 
+
+# Licenses
+
+For use of a part of [Ribot's style guide](https://github.com/ribot/android-guidelines/blob/master/project_and_code_guidelines.md).
+
+```
+Copyright [2018] [Karan Kumar]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
