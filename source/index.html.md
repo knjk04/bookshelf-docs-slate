@@ -15,22 +15,6 @@ includes:
 search: true
 ---
 
-# Table of contents
-
-1. Introduction
-
-2. File organisation
-
-2. Formatting
-
-3. Naming conventions
-
-4. Good practices
-
-5. XML style
-
-6. Annotations
-
 # 1. Introduction
 
 The style guide we follow is modelled around [Google's Java Style Guide](https://google.github.io/styleguide/javaguide.html). 
@@ -70,7 +54,7 @@ Braces use the Kernighan and Ritchie style for nonempty blocks or block-like con
 
 ### 3.1.3 Empty blocks 
 
-> (Empty blocks) Acceptable:
+> Section 3.1.3: Empty blocks
 
 ```java
 // Acceptable
@@ -97,7 +81,7 @@ Note that the unacceptable example above is for illustrative purposes only. It a
 
 ## 3.2 Spaces around operators
 
-> (Spaces around operators) Acceptable:
+> Section 3.2: Spaces around operators
 
 ```java
 // Acceptable
@@ -114,7 +98,7 @@ It's just a lot clearer and nicer to read.
 
 Even where obvious. use parenthesis to make the ordering explicit. It could save someone else who does not know the precedence rules from having to look it up.
 
-> SECTION X, Explicit operator precedence
+> Section 3.3: Explicit operator precedence
 
 ```java
 // Good
@@ -175,11 +159,13 @@ Type of file | Prefix          |
 
 - Adapters to be suffixed with ```Adapter```
   
+> Section 4.2.2: Suffixes
+  
   ```java
   private BookListAdapter bookListAdapter;
   ```
 
-- ```Layout```s to be suffixed with ```Layout```
+- ```Layout```s to be suffixed with ```Layout``` (see XML tab for example)
 
 ```xml
 android:id="@+id/constraintLayout
@@ -189,7 +175,7 @@ android:id="@+id/constraintLayout
 
 ## 5.1 final where possible
 
-If something can be made final (e.g. constants), it should be made final.
+If something can be made ```final``` (e.g. constants), it should be made final.
 
 ## 5.2 Use maintained/better libraries
 
@@ -213,6 +199,8 @@ This can help reduce the likelihood of a bug occuring, as well as improve readab
 
 Instead of just catching ```Exception```, if it is possible to catch (a) particular exception(s), do so.
 
+> Section 5.4.1: Catch specific exceptions
+
 ```java
 // Bad
 try {
@@ -232,6 +220,8 @@ try {
 ### 5.4.2 Don't drop the catch
 
 In a catch block, don't do nothing by leaving the block empty. You should ideally log the exception or print the stack trace.
+
+> Section 5.4.2: Don't drop the catch
 
 ``` java
 // Good
@@ -274,6 +264,8 @@ Instead of using string literals, string arrays should always use String resourc
 
 It can be a lot confusing for other programmers (see [Fowler's article](https://www.refactoring.com/catalog/removeDoubleNegative.html)).
 
+> Section 5.6: Single positive conditionals
+
 ```java
 // Good
 if (isAvailable) {
@@ -303,7 +295,7 @@ The following order should be used:
 6. Private methods
 7. Inner classes or interfaces
 
-> Class member ordering
+> Section 5.7: Class member ordering
 
 ```java
 public class MainActivity extends Activity {
@@ -334,7 +326,7 @@ public class MainActivity extends Activity {
 
 Activity or Fragment classes should follow the ordering or the activity/fragment lifecycle: ```onCreate()```, ```onDestroy```, ```onPause()``` and ```onResume()```.
 
-> Activity lifecycle
+> Section 5.7: Activity lifecycle
 
 ```java
 public class MainActivity extends Activity {
@@ -366,6 +358,8 @@ Use self-closing tags where possible.
 ## 7.1 Annotations on separate lines
 
 Every annotation should be on its own separate line
+
+> Section 7: Activity lifecycle
 
 ```java
 @NonNull
