@@ -123,7 +123,7 @@ For readability purposes. Some exceptions include:
 
 ## 4.1 Non-constant field names
 
-> Section 4.1, Non-constant field names:
+> Section 4.1: Non-constant field names:
 
 ```java
 // Good
@@ -171,7 +171,7 @@ Type of file | Prefix          |
 android:id="@+id/constraintLayout
 ```
 
-# Good practices
+# 5. Good practices
 
 ## 5.1 final where possible
 
@@ -346,6 +346,17 @@ public class MainActivity extends Activity {
 
 }
 ```
+
+## 5.8 Use Butter Knife where possible
+
+Instead of doing:
+
+- ```findViewById(...)```, use ```@BindView``` where possible
+
+- ```android:onClick``` or ```setOnClickListener``` for views like Buttons, use the Butter Knife ```@OnClick``` annotation
+
+
+
 
 # 6 XML Style
 
